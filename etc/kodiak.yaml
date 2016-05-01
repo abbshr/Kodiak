@@ -1,0 +1,7 @@
+# Kodiak configurations
+
+sock: '../leviathan/run/server.sock'
+port: 23333
+cluster_core: 4
+api_prefix: '/apictl'
+version: 'v1'

@@ -1,0 +1,25 @@
+{
+  "name": "kodiak",
+  "version": "1.0.0",
+  "description": "service discovery",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "mocha ./ --compilers coffee:coffee-script/register"
+  },
+  "author": "ran <abbshrsoufii@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "should": "^8.2.2"
+  },
+  "dependencies": {
+    "cbor": "^1.0.4",
+    "coffee-script": "^1.10.0",
+    "ioredis": "^1.15.1",
+    "js-yaml": "^3.5.3",
+    "koa": "^1.1.2",
+    "koa-router": "^5.4.0",
+    "thinky": "^2.2.4",
+    "winston": "^2.1.1"
+  }
+}
