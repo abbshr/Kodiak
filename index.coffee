@@ -1,5 +1,5 @@
 # setup extend YAML `require` parser
-require './lib/util/extend'
+require './lib/util/yaml-extend'
 config = require './etc/Kodiak'
 logger = require('./lib/util/logger')()
 cluster = require 'cluster'
@@ -25,7 +25,7 @@ class Master
       logger.info "[master]", "registry signal event:", sig
       process.on sig, @signalHandle sig
 
-  signalHandle: (signal) =>
+  signalHandle: (signal) ->
     =>
       logger.warn "[master]", "got signal:", signal
       @_closing = yes
@@ -61,3 +61,5 @@ class Master
 
   onWokerOnline: (worker) =>
     logger.info "[master]", "worker #id=#{worker.id} start"
+
+module.exports = Master
