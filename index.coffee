@@ -35,7 +35,7 @@ class Master
     cluster.fork() for [1..core]
 
   stopCluster: (signal) ->
-    worker.kill signal for _, worker of cluster.workers
+    worker.process.kill signal for _, worker of cluster.workers
     
   initCluster: ->
     cluster.setupMaster exec: @exec_path
