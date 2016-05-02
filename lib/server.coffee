@@ -24,6 +24,12 @@ serviceRouter = koaRouter()
       plugins: @request.body.plugins
     logger.debug "[worker]", "request packet", req_pack
     @body = yield forward req_pack
+  .get '/:serviceName', ->
+    req_pack =
+      cmd: 'query_service'
+      serviceName: @params.serviceName
+    logger.debug "[worker]", "request packet", req_pack
+    @body = yield forward req_pack
 
 pluginRouter = koaRouter()
   .prefix "#{config.api_prefix}/#{config.version}/plugin"
@@ -33,6 +39,13 @@ pluginRouter = koaRouter()
       serviceName: @params.serviceName
       pluginName: @params.pluginName
       cfg: @request.body.cfg
+    logger.debug "[worker]", "request packet", req_pack
+    @body = yield forward req_pack
+  .get '/:pluginName/:serviceName', ->
+    req_pack =
+      cmd: 'query_plugin'
+      serviceName: @params.serviceName
+      pluginName: @params.pluginName
     logger.debug "[worker]", "request packet", req_pack
     @body = yield forward req_pack
 

@@ -1,6 +1,6 @@
 # Kodiak configurations
 
-sock: '../leviathan/run/server.sock'
+sock: '../leviathan/run/6000.sock'
 port: 23333
 cluster_core: 4
 api_prefix: '/apictl'
