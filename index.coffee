@@ -1,6 +1,6 @@
 # setup extend YAML `require` parser
 require './lib/util/yaml-extend'
-config = require './etc/Kodiak'
+config = require './etc/kodiak'
 logger = require('./lib/util/logger')()
 cluster = require 'cluster'
 

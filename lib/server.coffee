@@ -5,7 +5,7 @@ koa = require 'koa'
 koaRouter = require 'koa-router'
 koaBody = require 'koa-body'
 net = require 'net'
-config = require '../etc/Kodiak'
+config = require '../etc/kodiak'
 logger = require('./util/logger')()
 
 process.on 'SIGINT', ->
